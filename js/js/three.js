@@ -484,22 +484,22 @@
 
 // С одним параметром 
 
-const logMessage = message => {
-  console.log(message);
+// const logMessage = message => {
+//   console.log(message);
 
 
-}
+// }
 
-console.log(logMessage('Hello'))
-
-
-// Если параметров нет 
+// console.log(logMessage('Hello'))
 
 
-const greet = () => {
+// // Если параметров нет 
 
-  console.log('Привет');
 
-};
+// const greet = () => {
 
-greet()
+//   console.log('Привет');
+
+// };
+
+// greet()
