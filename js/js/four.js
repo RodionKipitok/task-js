@@ -190,30 +190,30 @@
 
 
 
- const pizzaPalace = {
-	pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
-	order(pizzaName,onSuccess,onError) {
-	},
- };
- // Change code above this line
+//  const pizzaPalace = {
+// 	pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+// 	order(pizzaName,onSuccess,onError) {
+// 	},
+//  };
+//  // Change code above this line
 
 
  
- // Callback for onSuccess
- function makePizza(pizzaName) {
-	return `Your order is accepted. Cooking pizza ${pizzaName}.`;
- }
+//  // Callback for onSuccess
+//  function makePizza(pizzaName) {
+// 	return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+//  }
  
- // Callback for onError
- function onOrderError(error) {
-	return `Error! ${error}`;
- }
+//  // Callback for onError
+//  function onOrderError(error) {
+// 	return `Error! ${error}`;
+//  }
  
- // Method calls with callbacks
- pizzaPalace.order('Smoked', makePizza, onOrderError);
- pizzaPalace.order('Four meats', makePizza, onOrderError);
- pizzaPalace.order('Big Mike', makePizza, onOrderError);
- pizzaPalace.order('Vienna', makePizza, onOrderError);
+//  // Method calls with callbacks
+//  pizzaPalace.order('Smoked', makePizza, onOrderError);
+//  pizzaPalace.order('Four meats', makePizza, onOrderError);
+//  pizzaPalace.order('Big Mike', makePizza, onOrderError);
+//  pizzaPalace.order('Vienna', makePizza, onOrderError);
 
 
 //  const pizzas = ['Ultracheese', 'Smoked', 'Four meats']
@@ -236,30 +236,35 @@
 
 
 
+// const players = [
+
+// 	{id: 'player-1',name:'Mango', online:true,rank:800},
+// 	{id: 'player-2',name:'Poly', online:false,rank:600},
+// 	{id: 'player-3',name:'Kiwi', online:true,rank:100},
+// 	{id: 'player-4',name:'Ajax', online:true,rank:400},
+// 	// {id: 'player-5',name:'Chelsy',online:true,rank:500}
+// ];
+
+
+// const onlineAndSorted = players
+//     .filter(player => player.online)
+//     .sort((playerA,playerB) => playerA.rank - playerB.rank);
+
+// 	 console.table(onlineAndSorted)
+
 const players = [
 
-	{id: 'player-1',name:'Mango', online:true,rank:800},
-	{id: 'player-2',name:'Poly', online:false,rank:600},
-	{id: 'player-3',name:'Kiwi', online:true,rank:100},
-	{id: 'player-4',name:'Ajax', online:true,rank:400},
-	// {id: 'player-5',name:'Chelsy',online:true,rank:500}
+	{id: 'player-1',name:'Mango',timePlayer:310,points:54, online:false},
+	{id: 'player-2',name:'Poly',timePlayer:470,points:92, online:true},
+	{id: 'player-3',name:'Kiwi',timePlayer:230,points:48, online:true},
+	{id: 'player-4',name:'Ajax',timePlayer:150,points:71, online:false},
+	{id: 'player-5',name:'Chelsy',timePlayer:80,points:48, online:true}
 ];
 
 
-const onlineAndSorted = players
-    .filter(player => player.online)
-    .sort((playerA,playerB) => playerA.rank - playerB.rank);
+const updedPlayers =players.map(player =>({...player,points:player.points + player.points * 0.1}));
 
-	 console.table(onlineAndSorted)
-
-// const players = [
-
-// 	{id: 'player-1',name:'Mango',timePlayer:310,points:54, online:false},
-// 	{id: 'player-2',name:'Poly',timePlayer:470,points:92, online:true},
-// 	{id: 'player-3',name:'Kiwi',timePlayer:230,points:48, online:true},
-// 	{id: 'player-4',name:'Ajax',timePlayer:150,points:71, online:false},
-// 	{id: 'player-5',name:'Chelsy',timePlayer:80,points:48, online:true}
-// ];
+console.table(updedPlayers);
 
 
 // const sortByBestPlayers = [...players].sort((prevPlayer,nextPlayer) => {
@@ -284,4 +289,80 @@ const onlineAndSorted = players
 // 	}
 //  }
  
+const numbers = [1,2,3,5,7];
+
+
+// было 
+
+// const greaterThenTwo = numbers.filter(function(num){
+// 	return num > 2
+// })
+
+// стало 
+// const greaterThenTwo = numbers.filter(num => num > 2);
+
+
+// console.log(greaterThenTwo);
+
+// было
+
+// const multByTwo = numbers.map(function(num){
+// 	return num * 3;
+// });
+
+// стало 
+
+// const multByTwo =  numbers.map(num => num * 3);
+
+// console.log(multByTwo)
+
+
+// было
+// const sorded = multByTwo.sort(function(a,b){
+
+//   return a- b
+
+// });
+
+// стало 
+
+// const sorded = multByTwo.sort((a,b) => a-b);
+
+// console.log(sorded);
+
+
+// цепочка 
+
+// было 
+
+// const res = numbers
+
+//    .filter(function(num){
+// 		return num > 2
+// 	 })
+//    .map(function(num){
+// 			return num * 3;
+// 	})
+// 	.sort(function(a,b){
+
+// 		   return a- b
+		
+// 	 });	
+
+
+
+
+// стало 
+
+
+const res = numbers
+
+    .filter(num => num > 2)
+	 .map(num => num * 3)
+	 .sort((a,b) => a - b)
+
+	 console.log(res)
+
+
+
 
